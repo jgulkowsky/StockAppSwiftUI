@@ -14,6 +14,7 @@
 		E3F50C4D2B4C05F8005DAF88 /* StockAppSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C4C2B4C05F8005DAF88 /* StockAppSwiftUITests.swift */; };
 		E3F50C572B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C562B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift */; };
 		E3F50C592B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C582B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift */; };
+		E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = StockAppSwiftUI;
+			packageProductDependencies = (
+				E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */,
+			);
 			productName = StockAppSwiftUI;
 			productReference = E3F50C382B4C05F6005DAF88 /* StockAppSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = E3F50C2F2B4C05F6005DAF88;
+			packageReferences = (
+				E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */,
+			);
 			productRefGroup = E3F50C392B4C05F6005DAF88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jgulkowsky/StockAppLogic.git";
+			requirement = {
+				branch = "feature/add-swift-ui-version";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */;
+			productName = StockAppLogicSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3F50C302B4C05F6005DAF88 /* Project object */;
 }

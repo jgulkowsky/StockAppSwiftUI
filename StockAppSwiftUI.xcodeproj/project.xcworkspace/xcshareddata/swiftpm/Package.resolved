@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "stockapplogic",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jgulkowsky/StockAppLogic.git",
+      "state" : {
+        "branch" : "feature/add-swift-ui-version",
+        "revision" : "f1b136ff457e79698575885322381784dd62d798"
+      }
+    }
+  ],
+  "version" : 2
+}
