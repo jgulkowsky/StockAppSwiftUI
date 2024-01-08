@@ -19,6 +19,8 @@
 		E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */; };
 		E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */; };
 		E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */; };
+		E3F50C742B4C2A5D005DAF88 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C732B4C2A5D005DAF88 /* DGChartsDynamic */; };
+		E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObject.swift; sourceTree = "<group>"; };
 		E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWatchlistsCoreDataProvider.swift; sourceTree = "<group>"; };
+		E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F50C742B4C2A5D005DAF88 /* DGChartsDynamic in Frameworks */,
 				E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +116,7 @@
 				E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */,
 				E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */,
 				E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */,
+				E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */,
 			);
 			path = StockAppSwiftUI;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			name = StockAppSwiftUI;
 			packageProductDependencies = (
 				E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */,
+				E3F50C732B4C2A5D005DAF88 /* DGChartsDynamic */,
 			);
 			productName = StockAppSwiftUI;
 			productReference = E3F50C382B4C05F6005DAF88 /* StockAppSwiftUI.app */;
@@ -234,6 +240,7 @@
 			mainGroup = E3F50C2F2B4C05F6005DAF88;
 			packageReferences = (
 				E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */,
+				E3F50C722B4C2A5D005DAF88 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = E3F50C392B4C05F6005DAF88 /* Products */;
 			projectDirPath = "";
@@ -280,6 +287,7 @@
 				E3F50C3E2B4C05F6005DAF88 /* ContentView.swift in Sources */,
 				E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */,
 				E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */,
+				E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */,
 				E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */,
 				E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */,
 				E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */,
@@ -617,6 +625,14 @@
 				kind = branch;
 			};
 		};
+		E3F50C722B4C2A5D005DAF88 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -624,6 +640,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */;
 			productName = StockAppLogicSwiftUI;
+		};
+		E3F50C732B4C2A5D005DAF88 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3F50C722B4C2A5D005DAF88 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

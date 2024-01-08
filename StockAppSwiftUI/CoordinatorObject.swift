@@ -48,7 +48,7 @@ class CoordinatorObject: Coordinator, ObservableObject {
             coordinator: self,
             quotesProvider: self.quotesProvider,
             chartDataProvider: self.chartDataProvider,
-            symbol: "AAPL",
+            symbol: "MSFT",
             refreshRate: 5
         )
     }
