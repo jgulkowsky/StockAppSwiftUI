@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import StockAppLogic
 import StockAppLogicSwiftUI
 
 struct QuoteView: View {
@@ -42,8 +41,6 @@ struct QuoteView: View {
                     )
                 }
                 .padding(.horizontal, Self.horizontalPadding)
-                
-                Spacer()
             } else if viewModel.state == .dataObtained {
                 VStack {
                     CandleStickChart(data: $viewModel.chartData)

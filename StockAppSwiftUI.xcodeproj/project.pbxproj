@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E384B6162B4C54FE00825A8C /* WatchlistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */; };
+		E384B61A2B4C572E00825A8C /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */; };
 		E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */; };
 		E3F50C3E2B4C05F6005DAF88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */; };
 		E3F50C402B4C05F8005DAF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F50C3F2B4C05F8005DAF88 /* Assets.xcassets */; };
@@ -21,6 +23,7 @@
 		E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */; };
 		E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */; };
 		E3F50C792B4C38B6005DAF88 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */; };
+		E3F50C7B2B4C3C5F005DAF88 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E384B61B2B4C572E00825A8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E384B61A2B4C572E00825A8C /* DGChartsDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCellView.swift; sourceTree = "<group>"; };
 		E3F50C382B4C05F6005DAF88 /* StockAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +74,7 @@
 		E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObject.swift; sourceTree = "<group>"; };
 		E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWatchlistsCoreDataProvider.swift; sourceTree = "<group>"; };
 		E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickChart.swift; sourceTree = "<group>"; };
+		E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +104,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E384B6172B4C561500825A8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E3F50C2F2B4C05F6005DAF88 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +118,7 @@
 				E3F50C4B2B4C05F8005DAF88 /* StockAppSwiftUITests */,
 				E3F50C552B4C05F8005DAF88 /* StockAppSwiftUIUITests */,
 				E3F50C392B4C05F6005DAF88 /* Products */,
+				E384B6172B4C561500825A8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +144,8 @@
 				E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */,
 				E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */,
 				E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */,
+				E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */,
+				E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */,
 			);
 			path = StockAppSwiftUI;
 			sourceTree = "<group>";
@@ -156,6 +185,7 @@
 				E3F50C342B4C05F6005DAF88 /* Sources */,
 				E3F50C352B4C05F6005DAF88 /* Frameworks */,
 				E3F50C362B4C05F6005DAF88 /* Resources */,
+				E384B61B2B4C572E00825A8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,9 +318,11 @@
 				E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */,
 				E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */,
 				E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */,
+				E3F50C7B2B4C3C5F005DAF88 /* WatchlistView.swift in Sources */,
 				E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */,
 				E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */,
 				E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */,
+				E384B6162B4C54FE00825A8C /* WatchlistCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

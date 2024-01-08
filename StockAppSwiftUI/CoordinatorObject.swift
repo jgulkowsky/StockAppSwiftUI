@@ -10,6 +10,23 @@ import StockAppLogic
 import StockAppLogicSwiftUI
 
 class CoordinatorObject: Coordinator, ObservableObject {
+    @Published var goToWatchlistScreen: Bool = false {
+        didSet {
+            if goToWatchlistScreen == false {
+                watchlistViewModel = nil
+            }
+        }
+    }
+    
+    @Published var goToQuoteScreen: Bool = false {
+        didSet {
+            if goToQuoteScreen == false {
+                quoteViewModel = nil
+            }
+        }
+    }
+    
+    @Published var watchlistViewModel: WatchlistViewModel?
     @Published var quoteViewModel: QuoteViewModel?
     
     // todo: it would be nice to inject these things and not create them in CoordinatorObject but it's problematic to inject into the StateObject - for now I'm leaving it as it is - when app is ready then I can try to fix this problem
@@ -21,6 +38,8 @@ class CoordinatorObject: Coordinator, ObservableObject {
     private let quotesProvider: QuotesProvider
     private let symbolsProvider: SymbolsProvider
     private let chartDataProvider: ChartDataProvider
+    
+    private var currentViewModel: Any?
     
     init() {
         self.appFirstStartProvider = AppFirstStartProvider()
@@ -44,14 +63,34 @@ class CoordinatorObject: Coordinator, ObservableObject {
     
     func onAppStart() {
         // todo: add same setup as in UIKit app later on
-        self.quoteViewModel = QuoteViewModel(
+        self.watchlistViewModel = WatchlistViewModel(
             coordinator: self,
+            watchlistsProvider: self.watchlistsProvider,
             quotesProvider: self.quotesProvider,
-            chartDataProvider: self.chartDataProvider,
-            symbol: "MSFT",
+            watchlist: self.watchlistsCoreDataProvider.getWatchlists()[0],
             refreshRate: 5
         )
+        self.currentViewModel = watchlistViewModel
+        self.goToWatchlistScreen = true
     }
     
-    func execute(action: Action) {}
+    func execute(action: Action) {
+        if currentViewModel is WatchlistViewModel {
+            switch action {
+            case .itemSelected(let data):
+                if let stockItem = data as? StockItem {
+                    self.quoteViewModel = QuoteViewModel(
+                        coordinator: self,
+                        quotesProvider: self.quotesProvider,
+                        chartDataProvider: self.chartDataProvider,
+                        symbol: stockItem.symbol,
+                        refreshRate: 5
+                    )
+                    self.goToQuoteScreen = true
+                }
+            default:
+                return
+            }
+        }
+    }
 }

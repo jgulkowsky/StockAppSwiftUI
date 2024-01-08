@@ -9,7 +9,12 @@ import SwiftUI
 import StockAppLogic
 import StockAppLogicSwiftUI
 
-typealias QuoteViewModel = StockAppLogicSwiftUI.QuoteViewModel // todo: maybe such typealiasing could be in StockAppLogicSwiftUI so we don't have to write it here?
+// todo: maybe such typealiasing could be in StockAppLogicSwiftUI so we don't have to write it here?
+typealias WatchlistsViewModel = StockAppLogicSwiftUI.WatchlistsViewModel
+typealias AddNewWatchlistViewModel = StockAppLogicSwiftUI.AddNewWatchlistViewModel
+typealias WatchlistViewModel = StockAppLogicSwiftUI.WatchlistViewModel
+typealias AddNewSymbolViewModel = StockAppLogicSwiftUI.AddNewSymbolViewModel
+typealias QuoteViewModel = StockAppLogicSwiftUI.QuoteViewModel
 
 @main
 struct StockAppSwiftUIApp: App {
