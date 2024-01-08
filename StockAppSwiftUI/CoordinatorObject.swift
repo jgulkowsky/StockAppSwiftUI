@@ -10,6 +10,14 @@ import StockAppLogic
 import StockAppLogicSwiftUI
 
 class CoordinatorObject: Coordinator, ObservableObject {
+    @Published var goToWatchlistsScreen: Bool = false {
+        didSet {
+            if goToWatchlistsScreen == false {
+                watchlistsViewModel = nil
+            }
+        }
+    }
+    
     @Published var goToWatchlistScreen: Bool = false {
         didSet {
             if goToWatchlistScreen == false {
@@ -26,8 +34,36 @@ class CoordinatorObject: Coordinator, ObservableObject {
         }
     }
     
-    @Published var watchlistViewModel: WatchlistViewModel?
-    @Published var quoteViewModel: QuoteViewModel?
+    @Published var watchlistsViewModel: WatchlistsViewModel? {
+        didSet {
+            if watchlistsViewModel != nil {
+                currentViewModel = watchlistsViewModel
+            } else {
+                currentViewModel = nil
+            }
+        }
+    }
+    
+    @Published var watchlistViewModel: WatchlistViewModel?{
+        didSet {
+            if watchlistViewModel != nil {
+                currentViewModel = watchlistViewModel
+            } else {
+                currentViewModel = watchlistsViewModel
+            }
+        }
+    }
+    
+    @Published var quoteViewModel: QuoteViewModel?{
+        didSet {
+            if quoteViewModel != nil {
+                currentViewModel = quoteViewModel
+            } else {
+                currentViewModel = watchlistViewModel
+            }
+        }
+    }
+    
     
     // todo: it would be nice to inject these things and not create them in CoordinatorObject but it's problematic to inject into the StateObject - for now I'm leaving it as it is - when app is ready then I can try to fix this problem
     
@@ -63,19 +99,32 @@ class CoordinatorObject: Coordinator, ObservableObject {
     
     func onAppStart() {
         // todo: add same setup as in UIKit app later on
-        self.watchlistViewModel = WatchlistViewModel(
+        self.watchlistsViewModel = WatchlistsViewModel(
             coordinator: self,
-            watchlistsProvider: self.watchlistsProvider,
-            quotesProvider: self.quotesProvider,
-            watchlist: self.watchlistsCoreDataProvider.getWatchlists()[0],
-            refreshRate: 5
+            watchlistsProvider: self.watchlistsProvider
         )
-        self.currentViewModel = watchlistViewModel
-        self.goToWatchlistScreen = true
+        self.goToWatchlistsScreen = true
     }
     
     func execute(action: Action) {
-        if currentViewModel is WatchlistViewModel {
+        if currentViewModel is WatchlistsViewModel {
+            switch action {
+            case .itemSelected(let data):
+                if let watchlist = data as? Watchlist {
+                    self.watchlistViewModel = WatchlistViewModel(
+                        coordinator: self,
+                        watchlistsProvider: self.watchlistsProvider,
+                        quotesProvider: self.quotesProvider,
+                        watchlist: watchlist,
+                        refreshRate: 5
+                    )
+                    self.goToWatchlistScreen = true
+                }
+            default:
+                return
+            }
+        }
+        else if currentViewModel is WatchlistViewModel {
             switch action {
             case .itemSelected(let data):
                 if let stockItem = data as? StockItem {

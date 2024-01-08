@@ -12,14 +12,22 @@ struct CoordinatorView: View {
     
     var body: some View {
         NavigationStack {
-            if coordinator.goToWatchlistScreen,
-               let viewModel = coordinator.watchlistViewModel {
-                WatchlistView(viewModel: viewModel)
+            if coordinator.goToWatchlistsScreen,
+               let viewModel = coordinator.watchlistsViewModel {
+                WatchlistsView(viewModel: viewModel)
                     .navigationDestination(
-                        isPresented: $coordinator.goToQuoteScreen,
+                        isPresented: $coordinator.goToWatchlistScreen,
                         destination: {
-                            if let viewModel = coordinator.quoteViewModel {
-                                QuoteView(viewModel: viewModel)
+                            if let viewModel = coordinator.watchlistViewModel {
+                                WatchlistView(viewModel: viewModel)
+                                    .navigationDestination(
+                                        isPresented: $coordinator.goToQuoteScreen,
+                                        destination: {
+                                            if let viewModel = coordinator.quoteViewModel {
+                                                QuoteView(viewModel: viewModel)
+                                            }
+                                        }
+                                    )
                             }
                         }
                     )
