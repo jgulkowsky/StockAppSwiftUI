@@ -14,6 +14,13 @@
 		E3F50C4D2B4C05F8005DAF88 /* StockAppSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C4C2B4C05F8005DAF88 /* StockAppSwiftUITests.swift */; };
 		E3F50C572B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C562B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift */; };
 		E3F50C592B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C582B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift */; };
+		E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */; };
+		E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */; };
+		E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */; };
+		E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */; };
+		E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */; };
+		E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */; };
+		E3F50C792B4C38B6005DAF88 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,11 @@
 		E3F50C522B4C05F8005DAF88 /* StockAppSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockAppSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F50C562B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIUITests.swift; sourceTree = "<group>"; };
 		E3F50C582B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObject.swift; sourceTree = "<group>"; };
+		E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWatchlistsCoreDataProvider.swift; sourceTree = "<group>"; };
+		E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F50C792B4C38B6005DAF88 /* DGChartsDynamic in Frameworks */,
+				E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +112,11 @@
 				E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */,
 				E3F50C3F2B4C05F8005DAF88 /* Assets.xcassets */,
 				E3F50C412B4C05F8005DAF88 /* Preview Content */,
+				E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */,
+				E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */,
+				E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */,
+				E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */,
+				E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */,
 			);
 			path = StockAppSwiftUI;
 			sourceTree = "<group>";
@@ -143,6 +162,10 @@
 			dependencies = (
 			);
 			name = StockAppSwiftUI;
+			packageProductDependencies = (
+				E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */,
+				E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */,
+			);
 			productName = StockAppSwiftUI;
 			productReference = E3F50C382B4C05F6005DAF88 /* StockAppSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +238,10 @@
 				Base,
 			);
 			mainGroup = E3F50C2F2B4C05F6005DAF88;
+			packageReferences = (
+				E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */,
+				E3F50C772B4C38B6005DAF88 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = E3F50C392B4C05F6005DAF88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +285,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3F50C3E2B4C05F6005DAF88 /* ContentView.swift in Sources */,
+				E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */,
+				E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */,
+				E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */,
+				E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */,
 				E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */,
+				E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +615,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jgulkowsky/StockAppLogic.git";
+			requirement = {
+				branch = "feature/add-swift-ui-version";
+				kind = branch;
+			};
+		};
+		E3F50C772B4C38B6005DAF88 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */;
+			productName = StockAppLogicSwiftUI;
+		};
+		E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3F50C772B4C38B6005DAF88 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3F50C302B4C05F6005DAF88 /* Project object */;
 }

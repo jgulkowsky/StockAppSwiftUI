@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import StockAppLogic
+import StockAppLogicSwiftUI
+
+typealias QuoteViewModel = StockAppLogicSwiftUI.QuoteViewModel // todo: maybe such typealiasing could be in StockAppLogicSwiftUI so we don't have to write it here?
 
 @main
 struct StockAppSwiftUIApp: App {
+    @StateObject private var coordinator = CoordinatorObject()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                coordinator: coordinator
+            )
         }
     }
 }
