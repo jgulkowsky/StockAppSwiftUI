@@ -15,6 +15,10 @@
 		E3F50C572B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C562B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift */; };
 		E3F50C592B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C582B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift */; };
 		E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */; };
+		E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */; };
+		E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */; };
+		E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */; };
+		E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		E3F50C522B4C05F8005DAF88 /* StockAppSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockAppSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F50C562B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIUITests.swift; sourceTree = "<group>"; };
 		E3F50C582B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObject.swift; sourceTree = "<group>"; };
+		E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWatchlistsCoreDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 				E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */,
 				E3F50C3F2B4C05F8005DAF88 /* Assets.xcassets */,
 				E3F50C412B4C05F8005DAF88 /* Preview Content */,
+				E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */,
+				E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */,
+				E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */,
+				E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */,
 			);
 			path = StockAppSwiftUI;
 			sourceTree = "<group>";
@@ -266,7 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3F50C3E2B4C05F6005DAF88 /* ContentView.swift in Sources */,
+				E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */,
+				E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */,
+				E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */,
 				E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */,
+				E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
