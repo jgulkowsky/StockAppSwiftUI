@@ -74,20 +74,3 @@ struct QuoteView: View {
         .onDisappear(perform: viewModel.onViewWillDisappear)
     }
 }
-
-// todo: add mocks so we can actually see the QuoteView
-struct QuoteView_Previews: PreviewProvider {
-    static let apiFetcher = ApiFetcher()
-    
-    static var previews: some View {
-        QuoteView(
-            viewModel: QuoteViewModel(
-                coordinator: CoordinatorObject(),
-                quotesProvider: QuotesProvider(apiFetcher: apiFetcher),
-                chartDataProvider: ChartDataProvider(apiFetcher: apiFetcher),
-                symbol: "AAPL",
-                refreshRate: 5
-            )
-        )
-    }
-}
