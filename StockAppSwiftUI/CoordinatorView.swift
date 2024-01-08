@@ -11,9 +11,10 @@ struct CoordinatorView: View {
     @ObservedObject var coordinator: CoordinatorObject
     
     var body: some View {
-        // todo: use navigation stack
-        if let quoteViewModel = coordinator.quoteViewModel {
-            QuoteView(viewModel: quoteViewModel)
+        NavigationStack {
+            if let quoteViewModel = coordinator.quoteViewModel {
+                QuoteView(viewModel: quoteViewModel)
+            }
         }
     }
 }
