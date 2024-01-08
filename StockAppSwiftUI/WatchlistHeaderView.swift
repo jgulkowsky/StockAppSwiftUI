@@ -15,6 +15,8 @@ struct WatchlistHeaderView: View {
     private static let rightPadding: CGFloat = Self.leftPadding + 20.0
     private static let labelWidth: CGFloat = (UIScreen.main.bounds.width - Self.leftPadding - Self.rightPadding) / 4
     
+    private static let fontSize: CGFloat = 10.0
+    
     var body: some View {
         HStack() {
             Text(items[0])
@@ -27,6 +29,7 @@ struct WatchlistHeaderView: View {
                 .frame(width: Self.labelWidth)
         }
         .multilineTextAlignment(.leading)
+        .font(.system(size: Self.fontSize))
         .padding(.leading, Self.leftPadding)
         .padding(.trailing, Self.rightPadding)
     }
