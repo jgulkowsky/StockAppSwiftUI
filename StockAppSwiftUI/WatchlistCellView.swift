@@ -20,7 +20,7 @@ struct WatchlistCellView: View {
         Button(
             action: action,
             label: {
-                HStack() { // todo: use constant like in UIKit
+                HStack() {
                     Text(item.symbol)
                         .frame(width: Self.labelWidth)
                     Text(item.quote?.bidPrice.to2DecPlaces() ?? "-")

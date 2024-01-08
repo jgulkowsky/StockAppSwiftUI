@@ -26,18 +26,24 @@ struct WatchlistView: View {
                     .padding(.horizontal, Self.horizontalPadding)
             } else if viewModel.state == .dataObtained {
                 List {
-                    ForEach(Array(viewModel.stockItems.enumerated()), id: \.offset) { index, item in
-                        WatchlistCellView(
-                            item: item,
-                            action: {
-                                viewModel.onItemTapped(at: index)
-                            }
-                        )
-                    }
-                    .onDelete { indexSet in
-                        for index in indexSet {
-                            viewModel.onItemSwipedOut(at: Int(index)) // todo: it (or the viewModel logic) behaves strange when removing index 0
+                    Section {
+                        ForEach(Array(viewModel.stockItems.enumerated()), id: \.offset) { index, item in
+                            WatchlistCellView(
+                                item: item,
+                                action: {
+                                    viewModel.onItemTapped(at: index)
+                                }
+                            )
                         }
+                        .onDelete { indexSet in
+                            for index in indexSet {
+                                viewModel.onItemSwipedOut(at: Int(index)) // todo: it (or the viewModel logic) behaves strange when removing index 0
+                            }
+                        }
+                    } header: {
+                        WatchlistHeaderView(
+                            items: ["name", "bid price", "ask price", "last price"]
+                        )
                     }
                 }
                 .listStyle(.plain)
