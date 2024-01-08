@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E31CD4432B4C655B00F7AB69 /* WatchlistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */; };
+		E31CD4472B4C999600F7AB69 /* WatchlistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */; };
+		E31CD4492B4C9A6D00F7AB69 /* WatchlistsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */; };
 		E384B6162B4C54FE00825A8C /* WatchlistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */; };
 		E384B61A2B4C572E00825A8C /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */; };
 		E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */; };
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistHeaderView.swift; sourceTree = "<group>"; };
+		E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsView.swift; sourceTree = "<group>"; };
+		E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsCellView.swift; sourceTree = "<group>"; };
 		E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCellView.swift; sourceTree = "<group>"; };
 		E3F50C382B4C05F6005DAF88 /* StockAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */,
 				E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */,
 				E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */,
+				E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */,
+				E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */,
 			);
 			path = StockAppSwiftUI;
 			sourceTree = "<group>";
@@ -324,6 +330,8 @@
 				E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */,
 				E3F50C7B2B4C3C5F005DAF88 /* WatchlistView.swift in Sources */,
 				E3F50C712B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift in Sources */,
+				E31CD4472B4C999600F7AB69 /* WatchlistsView.swift in Sources */,
+				E31CD4492B4C9A6D00F7AB69 /* WatchlistsCellView.swift in Sources */,
 				E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */,
 				E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */,
 				E384B6162B4C54FE00825A8C /* WatchlistCellView.swift in Sources */,
