@@ -12,6 +12,7 @@ import StockAppLogicSwiftUI
 struct AddNewWatchlistView: View {
     @ObservedObject var viewModel: AddNewWatchlistViewModel
     @FocusState private var isFocused: Bool
+    @State private var shakeCount: Int = 0
     
     // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
     private static let horizontalPadding: CGFloat = 20.0
@@ -20,7 +21,8 @@ struct AddNewWatchlistView: View {
     var body: some View {
         VStack {
             LabeledContent {
-                TextField("e.g. tech stocks", text: $viewModel.watchlistText) // todo: add light border
+                TextField("e.g. tech stocks", text: $viewModel.watchlistText)
+                    .textFieldStyle(.roundedBorder)
                     .onSubmit {
                         viewModel.onTextFieldSubmitted(text: viewModel.watchlistText)
                     }
@@ -32,13 +34,19 @@ struct AddNewWatchlistView: View {
                     }
                     .autocorrectionDisabled()
             } label: {
-                Text("Watchlist name:")
+                Text("Watchlist name: ")
             }
+            .modifier(Shake(animatableData: CGFloat(shakeCount)))
             
             if let error = viewModel.error {
                 Text(error)
                     .padding(.top, Self.errorTextPaddingTop)
-                    .foregroundColor(.red) // todo: add shaking animation
+                    .foregroundColor(.red)
+                    .onAppear {
+                        withAnimation(.easeOut(duration: 0.25)) {
+                            self.shakeCount += 1
+                        }
+                    }
             }
             
             Spacer()

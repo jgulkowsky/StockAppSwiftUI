@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3152C792B4DC7DE008E55C8 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C782B4DC7DE008E55C8 /* Shake.swift */; };
 		E31CD4432B4C655B00F7AB69 /* WatchlistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */; };
 		E31CD4472B4C999600F7AB69 /* WatchlistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */; };
 		E31CD4492B4C9A6D00F7AB69 /* WatchlistsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E3152C782B4DC7DE008E55C8 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistHeaderView.swift; sourceTree = "<group>"; };
 		E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsView.swift; sourceTree = "<group>"; };
 		E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsCellView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				E31CD44A2B4CAD9600F7AB69 /* AddNewSymbolView.swift */,
 				E31CD44C2B4CADAE00F7AB69 /* AddNewWatchlistView.swift */,
 				E31CD44E2B4D892700F7AB69 /* SymbolCellView.swift */,
+				E3152C782B4DC7DE008E55C8 /* Shake.swift */,
 			);
 			path = StockAppSwiftUI;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				E3F50C3E2B4C05F6005DAF88 /* ContentView.swift in Sources */,
 				E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */,
+				E3152C792B4DC7DE008E55C8 /* Shake.swift in Sources */,
 				E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */,
 				E31CD4432B4C655B00F7AB69 /* WatchlistHeaderView.swift in Sources */,
 				E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */,
