@@ -118,6 +118,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3152C7A2B4E0346008E55C8 /* WatchlistsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */,
+				E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */,
+			);
+			path = WatchlistsScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7B2B4E0358008E55C8 /* WatchlistScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */,
+				E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */,
+				E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */,
+			);
+			path = WatchlistScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7C2B4E0364008E55C8 /* QuoteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */,
+			);
+			path = QuoteScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7D2B4E036E008E55C8 /* AddNewSymbolScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E31CD44E2B4D892700F7AB69 /* SymbolCellView.swift */,
+				E31CD44A2B4CAD9600F7AB69 /* AddNewSymbolView.swift */,
+			);
+			path = AddNewSymbolScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7E2B4E0390008E55C8 /* AddNewWatchlistScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E31CD44C2B4CADAE00F7AB69 /* AddNewWatchlistView.swift */,
+			);
+			path = AddNewWatchlistScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7F2B4E03A7008E55C8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */,
+				E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E3152C802B4E03B9008E55C8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */,
+				E3152C782B4DC7DE008E55C8 /* Shake.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E384B6172B4C561500825A8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,24 +211,18 @@
 		E3F50C3A2B4C05F6005DAF88 /* StockAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E3152C802B4E03B9008E55C8 /* Common */,
+				E3152C7F2B4E03A7008E55C8 /* Coordinator */,
+				E3152C7A2B4E0346008E55C8 /* WatchlistsScreen */,
+				E3152C7E2B4E0390008E55C8 /* AddNewWatchlistScreen */,
+				E3152C7B2B4E0358008E55C8 /* WatchlistScreen */,
+				E3152C7D2B4E036E008E55C8 /* AddNewSymbolScreen */,
+				E3152C7C2B4E0364008E55C8 /* QuoteScreen */,
 				E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */,
 				E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */,
 				E3F50C3F2B4C05F8005DAF88 /* Assets.xcassets */,
 				E3F50C412B4C05F8005DAF88 /* Preview Content */,
-				E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */,
-				E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */,
-				E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */,
 				E3F50C702B4C0E42005DAF88 /* MockWatchlistsCoreDataProvider.swift */,
-				E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */,
-				E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */,
-				E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */,
-				E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */,
-				E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */,
-				E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */,
-				E31CD44A2B4CAD9600F7AB69 /* AddNewSymbolView.swift */,
-				E31CD44C2B4CADAE00F7AB69 /* AddNewWatchlistView.swift */,
-				E31CD44E2B4D892700F7AB69 /* SymbolCellView.swift */,
-				E3152C782B4DC7DE008E55C8 /* Shake.swift */,
 			);
 			path = StockAppSwiftUI;
 			sourceTree = "<group>";
