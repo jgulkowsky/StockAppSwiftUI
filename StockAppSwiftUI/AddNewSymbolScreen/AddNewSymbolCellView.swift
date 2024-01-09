@@ -1,5 +1,5 @@
 //
-//  SymbolCellView.swift
+//  AddNewSymbolCellView.swift
 //  StockAppSwiftUI
 //
 //  Created by Jan Gulkowski on 09/01/2024.
@@ -8,7 +8,7 @@
 import SwiftUI
 import StockAppLogic
 
-struct SymbolCellView: View {
+struct AddNewSymbolCellView: View {
     var symbol: String
     var action: () -> Void
     
@@ -34,7 +34,7 @@ struct SymbolCellView: View {
 
 struct SymbolCellView_Previews: PreviewProvider {
     static var previews: some View {
-        SymbolCellView(
+        AddNewSymbolCellView(
             symbol: "AAPL",
             action: {}
         )
