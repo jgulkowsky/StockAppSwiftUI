@@ -16,7 +16,6 @@ struct AddNewWatchlistView: View {
     
     // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
     private static let horizontalPadding: CGFloat = 20.0
-    private static let errorTextPaddingTop: CGFloat = 15.0
     
     var body: some View {
         VStack {
@@ -39,9 +38,7 @@ struct AddNewWatchlistView: View {
             .modifier(Shake(animatableData: CGFloat(shakeCount)))
             
             if let error = viewModel.error {
-                Text(error)
-                    .padding(.top, Self.errorTextPaddingTop)
-                    .foregroundColor(.red)
+                ErrorText(text: error)
                     .onAppear {
                         withAnimation(.easeOut(duration: 0.25)) {
                             self.shakeCount += 1
