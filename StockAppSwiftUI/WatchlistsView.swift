@@ -45,6 +45,14 @@ struct WatchlistsView: View {
         }
         .navigationTitle("Watchlists")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button {
+                viewModel.onAddButtonTapped()
+            } label: {
+                Image(systemName: "plus")
+            }
+            .buttonStyle(.plain)
+        }
     }
 }
 

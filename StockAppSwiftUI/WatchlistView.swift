@@ -51,6 +51,14 @@ struct WatchlistView: View {
         }
         .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button {
+                viewModel.onAddButtonTapped()
+            } label: {
+                Image(systemName: "plus")
+            }
+            .buttonStyle(.plain)
+        }
         .onAppear(perform: viewModel.onViewWillAppear)
         .onDisappear(perform: viewModel.onViewWillDisappear)
     }

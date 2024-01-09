@@ -18,10 +18,26 @@ class CoordinatorObject: Coordinator, ObservableObject {
         }
     }
     
+    @Published var goToAddNewWatchlistScreen: Bool = false {
+        didSet {
+            if goToAddNewWatchlistScreen == false {
+                addNewWatchlistViewModel = nil
+            }
+        }
+    }
+    
     @Published var goToWatchlistScreen: Bool = false {
         didSet {
             if goToWatchlistScreen == false {
                 watchlistViewModel = nil
+            }
+        }
+    }
+    
+    @Published var goToAddNewSymbolScreen: Bool = false {
+        didSet {
+            if goToAddNewSymbolScreen == false {
+                addNewSymbolViewModel = nil
             }
         }
     }
@@ -44,12 +60,32 @@ class CoordinatorObject: Coordinator, ObservableObject {
         }
     }
     
+    @Published var addNewWatchlistViewModel: AddNewWatchlistViewModel? {
+        didSet {
+            if addNewWatchlistViewModel != nil {
+                currentViewModel = addNewWatchlistViewModel
+            } else {
+                currentViewModel = watchlistsViewModel
+            }
+        }
+    }
+    
     @Published var watchlistViewModel: WatchlistViewModel?{
         didSet {
             if watchlistViewModel != nil {
                 currentViewModel = watchlistViewModel
             } else {
                 currentViewModel = watchlistsViewModel
+            }
+        }
+    }
+    
+    @Published var addNewSymbolViewModel: AddNewSymbolViewModel? {
+        didSet {
+            if addNewSymbolViewModel != nil {
+                currentViewModel = addNewSymbolViewModel
+            } else {
+                currentViewModel = watchlistViewModel
             }
         }
     }
@@ -120,11 +156,16 @@ class CoordinatorObject: Coordinator, ObservableObject {
                     )
                     self.goToWatchlistScreen = true
                 }
+            case .addButtonTapped:
+                self.addNewWatchlistViewModel = AddNewWatchlistViewModel(
+                    coordinator: self,
+                    watchlistsProvider: self.watchlistsProvider
+                )
+                self.goToAddNewWatchlistScreen = true
             default:
                 return
             }
-        }
-        else if currentViewModel is WatchlistViewModel {
+        } else if currentViewModel is WatchlistViewModel {
             switch action {
             case .itemSelected(let data):
                 if let stockItem = data as? StockItem {
@@ -137,6 +178,24 @@ class CoordinatorObject: Coordinator, ObservableObject {
                     )
                     self.goToQuoteScreen = true
                 }
+            case .addButtonTapped(let data):
+                if let watchlist = data as? Watchlist {
+                    self.addNewSymbolViewModel = AddNewSymbolViewModel(
+                        coordinator: self,
+                        watchlistsProvider: self.watchlistsProvider,
+                        symbolsProvider: self.symbolsProvider,
+                        watchlist: watchlist,
+                        searchTextDebounceMillis: 500
+                    )
+                    self.goToAddNewSymbolScreen = true
+                }
+            default:
+                return
+            }
+        } else if currentViewModel is AddNewWatchlistViewModel {
+            switch action {
+            case .inputSubmitted:
+                self.goToAddNewWatchlistScreen = false
             default:
                 return
             }

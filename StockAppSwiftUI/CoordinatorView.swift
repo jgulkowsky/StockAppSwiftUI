@@ -16,10 +16,26 @@ struct CoordinatorView: View {
                let viewModel = coordinator.watchlistsViewModel {
                 WatchlistsView(viewModel: viewModel)
                     .navigationDestination(
+                        isPresented: $coordinator.goToAddNewWatchlistScreen,
+                        destination: {
+                            if let viewModel = coordinator.addNewWatchlistViewModel {
+                                AddNewWatchlistView(viewModel: viewModel)
+                            }
+                        }
+                    )
+                    .navigationDestination(
                         isPresented: $coordinator.goToWatchlistScreen,
                         destination: {
                             if let viewModel = coordinator.watchlistViewModel {
                                 WatchlistView(viewModel: viewModel)
+                                    .navigationDestination(
+                                        isPresented: $coordinator.goToAddNewSymbolScreen,
+                                        destination: {
+                                            if let viewModel = coordinator.addNewSymbolViewModel {
+                                                AddNewSymbolView(viewModel: viewModel)
+                                            }
+                                        }
+                                    )
                                     .navigationDestination(
                                         isPresented: $coordinator.goToQuoteScreen,
                                         destination: {
