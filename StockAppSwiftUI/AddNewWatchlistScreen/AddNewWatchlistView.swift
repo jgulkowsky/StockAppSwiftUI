@@ -38,7 +38,7 @@ struct AddNewWatchlistView: View {
             .modifier(Shake(animatableData: CGFloat(shakeCount)))
             
             if let error = viewModel.error {
-                ErrorView(text: viewModel.error ?? "")
+                ErrorView(text: error)
                     .onAppear {
                         withAnimation(.easeOut(duration: 0.25)) {
                             self.shakeCount += 1
