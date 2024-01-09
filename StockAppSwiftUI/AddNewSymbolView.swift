@@ -13,7 +13,6 @@ struct AddNewSymbolView: View {
     @ObservedObject var viewModel: AddNewSymbolViewModel
     @State private var searchText: String = ""
     @Environment(\.dismiss) private var dismiss
-    // todo: add .autocorrectionDisabled() somehow - maybe with @environment - there's sth about this
     
     var body: some View {
         List {
@@ -29,6 +28,7 @@ struct AddNewSymbolView: View {
         }
         .listStyle(.plain)
         .searchable(text: $searchText, prompt: " Search for symbol to add...")
+        .autocorrectionDisabled()
         .onChange(of: searchText) { value in
             viewModel.onSearchTextChanged(to: value)
         }
