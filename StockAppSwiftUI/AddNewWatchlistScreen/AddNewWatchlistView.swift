@@ -14,9 +14,6 @@ struct AddNewWatchlistView: View {
     @FocusState private var isFocused: Bool
     @State private var shakeCount: Int = 0
     
-    // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
-    private static let horizontalPadding: CGFloat = 20.0
-    
     var body: some View {
         VStack {
             LabeledContent {

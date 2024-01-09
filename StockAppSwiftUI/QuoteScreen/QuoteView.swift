@@ -12,7 +12,6 @@ struct QuoteView: View {
     @ObservedObject var viewModel: QuoteViewModel
     
     // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
-    private static let horizontalPadding: CGFloat = 20.0
     private static let labelsPaddingTop: Double = 20
     private static let offsetBetweenLabels: Double = 5
     private static let labelsPaddingBottom: Double = 15
