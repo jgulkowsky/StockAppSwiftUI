@@ -13,6 +13,7 @@ struct AddNewSymbolView: View {
     @ObservedObject var viewModel: AddNewSymbolViewModel
     @State private var searchText: String = ""
     @Environment(\.dismiss) private var dismiss
+    // todo: add .autocorrectionDisabled() somehow - maybe with @environment - there's sth about this
     
     var body: some View {
         List {

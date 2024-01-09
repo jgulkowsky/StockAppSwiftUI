@@ -19,7 +19,7 @@ struct CoordinatorView: View {
                         isPresented: $coordinator.goToAddNewWatchlistScreen,
                         destination: {
                             if let viewModel = coordinator.addNewWatchlistViewModel {
-                                AddNewWatchlistView()
+                                AddNewWatchlistView(viewModel: viewModel)
                             }
                         }
                     )

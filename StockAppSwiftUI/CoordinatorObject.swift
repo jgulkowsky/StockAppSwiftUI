@@ -192,6 +192,13 @@ class CoordinatorObject: Coordinator, ObservableObject {
             default:
                 return
             }
+        } else if currentViewModel is AddNewWatchlistViewModel {
+            switch action {
+            case .inputSubmitted:
+                self.goToAddNewWatchlistScreen = false
+            default:
+                return
+            }
         }
     }
 }
