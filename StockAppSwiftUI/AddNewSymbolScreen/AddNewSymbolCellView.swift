@@ -12,20 +12,18 @@ struct AddNewSymbolCellView: View {
     var symbol: String
     var action: () -> Void
     
-    private static let horizontalPadding: CGFloat = 20.0
-    
     private static let fontSize: CGFloat = 16.0
     
     var body: some View {
         Button(
             action: action,
             label: {
-                Text(symbol)
-                    .font(.system(size: Self.fontSize, weight: .bold))
-                    .background(in: Rectangle())
-                    .multilineTextAlignment(.leading)
-                    .padding(.horizontal, Self.horizontalPadding)
-                    .background(.red)
+                HStack {
+                    Text(symbol)
+                        .font(.system(size: Self.fontSize))
+                    Spacer()
+                }
+                .background(in: Rectangle())
             }
         )
         .buttonStyle(.plain)
