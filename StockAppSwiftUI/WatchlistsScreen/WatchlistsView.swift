@@ -17,10 +17,7 @@ struct WatchlistsView: View {
             if viewModel.state == .loading {
                 ProgressView()
             } else if viewModel.state == .error {
-                VStack {
-                    ErrorText(text: viewModel.error ?? "")
-                    Spacer()
-                }
+                ErrorView(text: viewModel.error ?? "")
             } else if viewModel.state == .dataObtained {
                 List {
                     ForEach(Array(viewModel.watchlists.enumerated()), id: \.offset) { index, item in

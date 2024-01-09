@@ -17,10 +17,7 @@ struct WatchlistView: View {
             if viewModel.state == .loading {
                 ProgressView()
             } else if viewModel.state == .error {
-                VStack {
-                    ErrorText(text: viewModel.error ?? "")
-                    Spacer()
-                }
+                ErrorView(text: viewModel.error ?? "")
             } else if viewModel.state == .dataObtained {
                 List {
                     Section {

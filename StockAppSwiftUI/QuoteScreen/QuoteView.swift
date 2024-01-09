@@ -13,9 +13,6 @@ struct QuoteView: View {
     
     // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
     private static let horizontalPadding: CGFloat = 20.0
-    private static let errorButtonPaddingTop: CGFloat = 30.0
-    private static let errorButtonWidth: CGFloat = 150.0
-    private static let errorButtonHeight: CGFloat = 40.0
     private static let labelsPaddingTop: Double = 20
     private static let offsetBetweenLabels: Double = 5
     private static let labelsPaddingBottom: Double = 15
@@ -25,20 +22,11 @@ struct QuoteView: View {
             if viewModel.state == .loading {
                 ProgressView()
             } else if viewModel.state == .error {
-                VStack {
-                    ErrorText(text: viewModel.error ?? "")
-                    Button { // todo: make it solid
-                        viewModel.onErrorRefreshButtonTapped()
-                    } label: {
-                        Text("Refresh")
-                    }
-                    .padding(.top, Self.errorButtonPaddingTop)
-                    .frame(
-                        width: Self.errorButtonWidth,
-                        height: Self.errorButtonHeight
-                    )
-                    Spacer()
-                }
+                ErrorView(
+                    text: viewModel.error ?? "",
+                    buttonText: "Refresh",
+                    onTap: viewModel.onErrorRefreshButtonTapped
+                )
                 .padding(.horizontal, Self.horizontalPadding)
             } else if viewModel.state == .dataObtained {
                 VStack {
