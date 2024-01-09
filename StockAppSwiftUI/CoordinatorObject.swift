@@ -165,8 +165,7 @@ class CoordinatorObject: Coordinator, ObservableObject {
             default:
                 return
             }
-        }
-        else if currentViewModel is WatchlistViewModel {
+        } else if currentViewModel is WatchlistViewModel {
             switch action {
             case .itemSelected(let data):
                 if let stockItem = data as? StockItem {
@@ -190,6 +189,13 @@ class CoordinatorObject: Coordinator, ObservableObject {
                     )
                     self.goToAddNewSymbolScreen = true
                 }
+            default:
+                return
+            }
+        } else if currentViewModel is AddNewSymbolViewModel {
+            switch action {
+            case .itemSelected:
+                self.goToAddNewSymbolScreen = false
             default:
                 return
             }

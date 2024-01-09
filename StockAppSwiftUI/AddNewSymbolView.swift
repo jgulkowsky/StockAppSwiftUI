@@ -6,15 +6,31 @@
 //
 
 import SwiftUI
+import StockAppLogic
+import StockAppLogicSwiftUI
 
 struct AddNewSymbolView: View {
+    @ObservedObject var viewModel: AddNewSymbolViewModel
+    
+    @State private var searchText: String = ""
+    
     var body: some View {
-        Text("Add new symbol view")
+        List {
+            ForEach(Array(viewModel.symbols.enumerated()), id: \.offset) { index, symbol in
+                SymbolCellView(
+                    symbol: symbol,
+                    action: {
+                        viewModel.onItemTapped(at: index)
+                        // todo: this creates a problem: 'Someone is removing an active search controller while its search bar is visible. The UI probably looks terrible. Search controller being removed:...'
+                    }
+                )
+            }
+        }
+        .listStyle(.plain)
+        .searchable(text: $searchText)
+        .onChange(of: searchText) { value in
+            viewModel.onSearchTextChanged(to: value)
+        }
     }
 }
 
-struct AddNewSymbolView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewSymbolView()
-    }
-}

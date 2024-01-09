@@ -32,7 +32,7 @@ struct CoordinatorView: View {
                                         isPresented: $coordinator.goToAddNewSymbolScreen,
                                         destination: {
                                             if let viewModel = coordinator.addNewSymbolViewModel {
-                                                AddNewSymbolView()
+                                                AddNewSymbolView(viewModel: viewModel)
                                             }
                                         }
                                     )
