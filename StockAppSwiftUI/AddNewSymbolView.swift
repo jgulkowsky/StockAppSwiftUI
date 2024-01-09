@@ -27,7 +27,7 @@ struct AddNewSymbolView: View {
             }
         }
         .listStyle(.plain)
-        .searchable(text: $searchText)
+        .searchable(text: $searchText, prompt: " Search for symbol to add...")
         .onChange(of: searchText) { value in
             viewModel.onSearchTextChanged(to: value)
         }
