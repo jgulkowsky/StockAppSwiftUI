@@ -11,8 +11,8 @@ import StockAppLogicSwiftUI
 
 struct AddNewSymbolView: View {
     @ObservedObject var viewModel: AddNewSymbolViewModel
-    
     @State private var searchText: String = ""
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         List {
@@ -21,7 +21,7 @@ struct AddNewSymbolView: View {
                     symbol: symbol,
                     action: {
                         viewModel.onItemTapped(at: index)
-                        // todo: this creates a problem: 'Someone is removing an active search controller while its search bar is visible. The UI probably looks terrible. Search controller being removed:...'
+                        dismiss()
                     }
                 )
             }

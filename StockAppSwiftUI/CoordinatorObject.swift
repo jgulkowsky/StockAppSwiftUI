@@ -192,13 +192,6 @@ class CoordinatorObject: Coordinator, ObservableObject {
             default:
                 return
             }
-        } else if currentViewModel is AddNewSymbolViewModel {
-            switch action {
-            case .itemSelected:
-                self.goToAddNewSymbolScreen = false
-            default:
-                return
-            }
         }
     }
 }
