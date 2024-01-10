@@ -27,7 +27,7 @@ struct StockAppSwiftUIApp: App {
             )
             .onAppear {
                 let appFirstStartProvider = AppFirstStartProvider()
-                let watchlistsCoreDataProvider = MockWatchlistsCoreDataProvider()
+                let watchlistsCoreDataProvider = WatchlistsCoreDataProvider()
                 let watchlistsProvider = WatchlistsProvider(
                     coreDataProvider: watchlistsCoreDataProvider,
                     appFirstStartProvider: appFirstStartProvider,
