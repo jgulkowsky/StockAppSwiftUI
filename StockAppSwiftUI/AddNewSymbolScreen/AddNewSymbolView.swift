@@ -17,7 +17,7 @@ struct AddNewSymbolView: View {
     var body: some View {
         List {
             ForEach(Array(viewModel.symbols.enumerated()), id: \.offset) { index, symbol in
-                SymbolCellView(
+                AddNewSymbolCellView(
                     symbol: symbol,
                     action: {
                         viewModel.onItemTapped(at: index)

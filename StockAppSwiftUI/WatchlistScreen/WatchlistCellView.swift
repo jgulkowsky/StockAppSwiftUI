@@ -12,10 +12,6 @@ struct WatchlistCellView: View {
     var item: StockItem
     var action: () -> Void
     
-    private static let leftPadding: CGFloat = 20.0
-    private static let rightPadding: CGFloat = Self.leftPadding + 20.0
-    private static let labelWidth: CGFloat = (UIScreen.main.bounds.width - Self.leftPadding - Self.rightPadding) / 4
-    
     private static let fontSize: CGFloat = 16.0
     
     var body: some View {
@@ -24,21 +20,18 @@ struct WatchlistCellView: View {
             label: {
                 HStack() {
                     Text(item.symbol)
-                        .frame(width: Self.labelWidth)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.system(size: Self.fontSize, weight: .bold))
                     Text(item.quote?.bidPrice.to2DecPlaces() ?? "-")
-                        .frame(width: Self.labelWidth)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Text(item.quote?.askPrice.to2DecPlaces() ?? "-")
-                        .frame(width: Self.labelWidth)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Text(item.quote?.lastPrice.to2DecPlaces() ?? "-")
-                        .frame(width: Self.labelWidth)
-                    // todo: add > on the right - maybe to the list not here...
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Chevron()
                 }
                 .background(in: Rectangle())
-                .multilineTextAlignment(.leading)
                 .font(.system(size: Self.fontSize))
-                .padding(.leading, Self.leftPadding)
-                .padding(.trailing, Self.rightPadding)
             }
         )
         .buttonStyle(.plain)

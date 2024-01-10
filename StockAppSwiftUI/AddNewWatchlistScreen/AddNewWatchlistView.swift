@@ -14,10 +14,6 @@ struct AddNewWatchlistView: View {
     @FocusState private var isFocused: Bool
     @State private var shakeCount: Int = 0
     
-    // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
-    private static let horizontalPadding: CGFloat = 20.0
-    private static let errorTextPaddingTop: CGFloat = 15.0
-    
     var body: some View {
         VStack {
             LabeledContent {
@@ -29,7 +25,7 @@ struct AddNewWatchlistView: View {
                     .focused($isFocused)
                     .onChange(of: isFocused) { isFocused in
                         if isFocused {
-                            viewModel.onTextFieldFocused(initialText: viewModel.watchlistText) // todo: generally viewModels doesn't use this initialText value so we can update the package and both clients using this method
+                            viewModel.onTextFieldFocused()
                         }
                     }
                     .autocorrectionDisabled()
@@ -39,9 +35,7 @@ struct AddNewWatchlistView: View {
             .modifier(Shake(animatableData: CGFloat(shakeCount)))
             
             if let error = viewModel.error {
-                Text(error)
-                    .padding(.top, Self.errorTextPaddingTop)
-                    .foregroundColor(.red)
+                ErrorView(text: error)
                     .onAppear {
                         withAnimation(.easeOut(duration: 0.25)) {
                             self.shakeCount += 1

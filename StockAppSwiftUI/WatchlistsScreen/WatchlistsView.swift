@@ -12,18 +12,12 @@ import StockAppLogicSwiftUI
 struct WatchlistsView: View {
     @ObservedObject var viewModel: WatchlistsViewModel
     
-    // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
-    private static let horizontalPadding: CGFloat = 20.0
-    private static let errorTextPaddingTop: CGFloat = 15.0
-    
     var body: some View {
         Group {
             if viewModel.state == .loading {
                 ProgressView()
             } else if viewModel.state == .error {
-                Text(viewModel.error ?? "") // todo: style same as in UIKit app
-                    .padding(.top, Self.errorTextPaddingTop)
-                    .padding(.horizontal, Self.horizontalPadding)
+                ErrorView(text: viewModel.error ?? "")
             } else if viewModel.state == .dataObtained {
                 List {
                     ForEach(Array(viewModel.watchlists.enumerated()), id: \.offset) { index, item in
