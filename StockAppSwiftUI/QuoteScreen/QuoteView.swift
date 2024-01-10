@@ -11,6 +11,8 @@ import StockAppLogicSwiftUI
 struct QuoteView: View {
     @ObservedObject var viewModel: QuoteViewModel
     
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
     // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
     private static let labelsPaddingTop: Double = 20
     private static let offsetBetweenLabels: Double = 5
@@ -30,27 +32,41 @@ struct QuoteView: View {
             } else if viewModel.state == .dataObtained {
                 VStack {
                     CandleStickChart(data: $viewModel.chartData)
-                        .padding(.horizontal, Self.horizontalPadding)
-                    VStack(spacing: Self.offsetBetweenLabels) { // todo: or HStack if there's enough space - when traitCollection.horizontalSizeClass == .regular
-                        HStack {
-                            Text("\(viewModel.bidPrice)")
-                            Spacer()
-                        }
-                        
-                        HStack {
-                            Text("\(viewModel.askPrice)")
-                            Spacer()
-                        }
-                        
-                        HStack {
-                            Text("\(viewModel.lastPrice)")
-                            Spacer()
+                    
+                    Group {
+                        if horizontalSizeClass == .compact {
+                            VStack(spacing: Self.offsetBetweenLabels) {
+                                HStack {
+                                    Text("\(viewModel.bidPrice)")
+                                    Spacer()
+                                }
+                                
+                                HStack {
+                                    Text("\(viewModel.askPrice)")
+                                    Spacer()
+                                }
+                                
+                                HStack {
+                                    Text("\(viewModel.lastPrice)")
+                                    Spacer()
+                                }
+                            }
+                        } else {
+                            HStack {
+                                Text("\(viewModel.bidPrice)")
+                                    .frame(maxWidth: .infinity)
+                                Text("\(viewModel.askPrice)")
+                                    .frame(maxWidth: .infinity)
+                                Text("\(viewModel.lastPrice)")
+                                    .frame(maxWidth: .infinity)
+                            }
                         }
                     }
-                    .padding(.horizontal, Self.horizontalPadding)
                     .padding(.top, Self.labelsPaddingTop)
                     .padding(.bottom, Self.labelsPaddingBottom)
+                    
                 }
+                .padding(.horizontal, Self.horizontalPadding)
             }
         }
         .navigationTitle(viewModel.title)
