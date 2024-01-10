@@ -8,6 +8,7 @@
 import SwiftUI
 import StockAppLogic
 import StockAppLogicSwiftUI
+import Combine
 
 class CoordinatorObject: Coordinator, ObservableObject {
     @Published var goToWatchlistsScreen: Bool = false {
@@ -107,6 +108,7 @@ class CoordinatorObject: Coordinator, ObservableObject {
     private var chartDataProvider: ChartDataProviding!
     
     private var currentViewModel: Any?
+    private var subscription: AnyCancellable?
     
     init() {}
     
@@ -125,12 +127,23 @@ class CoordinatorObject: Coordinator, ObservableObject {
     }
     
     func onAppStart() {
-        // todo: add same setup as in UIKit app later on
         self.watchlistsViewModel = WatchlistsViewModel(
             coordinator: self,
             watchlistsProvider: self.watchlistsProvider
         )
         self.goToWatchlistsScreen = true
+        
+        if appFirstStartProvider.isFirstAppStart {
+            subscription = watchlistsProvider.watchlists
+                .debounce(for: 0.2, scheduler: DispatchQueue.main) // todo: for some reason it doesn't want to work with smaller delay or without...
+                .receive(on: RunLoop.main)
+                .sink { [weak self] watchlists in
+                    guard let `self` = self else { return }
+                    self.execute(action: .itemSelected(data: watchlists[0]))
+                    self.subscription?.cancel()
+                    self.appFirstStartProvider.setAppFirstStarted()
+                }
+        }
     }
     
     func execute(action: Action) {
