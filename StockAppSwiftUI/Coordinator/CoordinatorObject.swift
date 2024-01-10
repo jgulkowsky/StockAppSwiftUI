@@ -135,7 +135,7 @@ class CoordinatorObject: Coordinator, ObservableObject {
         
         if appFirstStartProvider.isFirstAppStart {
             subscription = watchlistsProvider.watchlists
-                .debounce(for: 0.2, scheduler: DispatchQueue.main) // todo: for some reason it doesn't want to work with smaller delay or without...
+                .debounce(for: 0.2, scheduler: DispatchQueue.main) // todo: for some reason it doesn't want to work with smaller delay or without... - maybe try another apporach in CoordinatorView? the one with paths?
                 .receive(on: RunLoop.main)
                 .sink { [weak self] watchlists in
                     guard let `self` = self else { return }
