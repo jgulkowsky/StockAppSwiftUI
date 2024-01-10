@@ -70,7 +70,7 @@ class CoordinatorObject: Coordinator, ObservableObject {
         }
     }
     
-    @Published var watchlistViewModel: WatchlistViewModel?{
+    @Published var watchlistViewModel: WatchlistViewModel? {
         didSet {
             if watchlistViewModel != nil {
                 currentViewModel = watchlistViewModel
@@ -100,37 +100,28 @@ class CoordinatorObject: Coordinator, ObservableObject {
         }
     }
     
-    
-    // todo: it would be nice to inject these things and not create them in CoordinatorObject but it's problematic to inject into the StateObject - for now I'm leaving it as it is - when app is ready then I can try to fix this problem
-    
-    private let appFirstStartProvider: AppFirstStartProvider
-    private let watchlistsCoreDataProvider: MockWatchlistsCoreDataProvider
-    private let watchlistsProvider: WatchlistsProvider
-    private let apiFetcher: ApiFetcher
-    private let quotesProvider: QuotesProvider
-    private let symbolsProvider: SymbolsProvider
-    private let chartDataProvider: ChartDataProvider
+    private var appFirstStartProvider: AppFirstStartProviding!
+    private var watchlistsProvider: WatchlistsProviding!
+    private var quotesProvider: QuotesProviding!
+    private var symbolsProvider: SymbolsProviding!
+    private var chartDataProvider: ChartDataProviding!
     
     private var currentViewModel: Any?
     
-    init() {
-        self.appFirstStartProvider = AppFirstStartProvider()
-        self.watchlistsCoreDataProvider = MockWatchlistsCoreDataProvider()
-        self.watchlistsProvider = WatchlistsProvider(
-            coreDataProvider: watchlistsCoreDataProvider,
-            appFirstStartProvider: appFirstStartProvider,
-            initialList: Watchlist(
-                id: UUID(),
-                name: "My First List",
-                symbols: ["AAPL", "GOOG", "MSFT"]
-            )
-        )
-        self.apiFetcher = ApiFetcher()
-        self.quotesProvider = QuotesProvider(apiFetcher: apiFetcher)
-        self.symbolsProvider = SymbolsProvider(apiFetcher: apiFetcher)
-        self.chartDataProvider = ChartDataProvider(apiFetcher: apiFetcher)
-        
-        self.onAppStart()
+    init() {}
+    
+    func initializeWith(
+        appFirstStartProvider: AppFirstStartProviding,
+        watchlistsProvider: WatchlistsProviding,
+        quotesProvider: QuotesProviding,
+        symbolsProvider: SymbolsProviding,
+        chartDataProvider: ChartDataProviding
+    ) {
+        self.appFirstStartProvider = appFirstStartProvider
+        self.watchlistsProvider = watchlistsProvider
+        self.quotesProvider = quotesProvider
+        self.symbolsProvider = symbolsProvider
+        self.chartDataProvider = chartDataProvider
     }
     
     func onAppStart() {
