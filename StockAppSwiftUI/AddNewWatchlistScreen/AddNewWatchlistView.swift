@@ -25,7 +25,7 @@ struct AddNewWatchlistView: View {
                     .focused($isFocused)
                     .onChange(of: isFocused) { isFocused in
                         if isFocused {
-                            viewModel.onTextFieldFocused(initialText: viewModel.watchlistText) // todo: generally viewModels doesn't use this initialText value so we can update the package and both clients using this method
+                            viewModel.onTextFieldFocused()
                         }
                     }
                     .autocorrectionDisabled()
