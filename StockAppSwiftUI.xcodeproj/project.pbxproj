@@ -11,6 +11,7 @@
 		E3152C822B4E0A5A008E55C8 /* Chevron.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C812B4E0A5A008E55C8 /* Chevron.swift */; };
 		E3152C842B4E0C2D008E55C8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C832B4E0C2D008E55C8 /* ErrorView.swift */; };
 		E3152C862B4E1385008E55C8 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C852B4E1385008E55C8 /* ViewExtensions.swift */; };
+		E3152C912B50B54C008E55C8 /* ViewModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C902B50B54C008E55C8 /* ViewModelExtensions.swift */; };
 		E31CD4432B4C655B00F7AB69 /* WatchlistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */; };
 		E31CD4472B4C999600F7AB69 /* WatchlistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */; };
 		E31CD4492B4C9A6D00F7AB69 /* WatchlistsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */; };
@@ -71,6 +72,7 @@
 		E3152C812B4E0A5A008E55C8 /* Chevron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
 		E3152C832B4E0C2D008E55C8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		E3152C852B4E1385008E55C8 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		E3152C902B50B54C008E55C8 /* ViewModelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelExtensions.swift; sourceTree = "<group>"; };
 		E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistHeaderView.swift; sourceTree = "<group>"; };
 		E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsView.swift; sourceTree = "<group>"; };
 		E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsCellView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E3152C8F2B50B53E008E55C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3152C902B50B54C008E55C8 /* ViewModelExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E384B6172B4C561500825A8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +228,7 @@
 		E3F50C3A2B4C05F6005DAF88 /* StockAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E3152C8F2B50B53E008E55C8 /* Extensions */,
 				E3152C802B4E03B9008E55C8 /* Common */,
 				E3152C7F2B4E03A7008E55C8 /* Coordinator */,
 				E3152C7A2B4E0346008E55C8 /* WatchlistsScreen */,
@@ -413,6 +424,7 @@
 				E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */,
 				E384B6162B4C54FE00825A8C /* WatchlistCellView.swift in Sources */,
 				E3152C822B4E0A5A008E55C8 /* Chevron.swift in Sources */,
+				E3152C912B50B54C008E55C8 /* ViewModelExtensions.swift in Sources */,
 				E31CD44D2B4CADAE00F7AB69 /* AddNewWatchlistView.swift in Sources */,
 				E31CD44F2B4D892700F7AB69 /* AddNewSymbolCellView.swift in Sources */,
 			);
