@@ -11,42 +11,29 @@ struct CoordinatorView: View {
     @ObservedObject var coordinator: CoordinatorObject
     
     var body: some View {
-        NavigationStack {
-            if coordinator.goToWatchlistsScreen,
-               let viewModel = coordinator.watchlistsViewModel {
+        if let viewModel = coordinator.watchlistsViewModel {
+            NavigationStack(path: $coordinator.path) {
                 WatchlistsView(viewModel: viewModel)
-                    .navigationDestination(
-                        isPresented: $coordinator.goToAddNewWatchlistScreen,
-                        destination: {
-                            if let viewModel = coordinator.addNewWatchlistViewModel {
-                                AddNewWatchlistView(viewModel: viewModel)
-                            }
+                    .navigationDestination(for: AddNewWatchlistViewModel.self) { viewModel in
+                        if let viewModel = viewModel {
+                            AddNewWatchlistView(viewModel: viewModel)
                         }
-                    )
-                    .navigationDestination(
-                        isPresented: $coordinator.goToWatchlistScreen,
-                        destination: {
-                            if let viewModel = coordinator.watchlistViewModel {
-                                WatchlistView(viewModel: viewModel)
-                                    .navigationDestination(
-                                        isPresented: $coordinator.goToAddNewSymbolScreen,
-                                        destination: {
-                                            if let viewModel = coordinator.addNewSymbolViewModel {
-                                                AddNewSymbolView(viewModel: viewModel)
-                                            }
-                                        }
-                                    )
-                                    .navigationDestination(
-                                        isPresented: $coordinator.goToQuoteScreen,
-                                        destination: {
-                                            if let viewModel = coordinator.quoteViewModel {
-                                                QuoteView(viewModel: viewModel)
-                                            }
-                                        }
-                                    )
-                            }
+                    }
+                    .navigationDestination(for: WatchlistViewModel.self) { viewModel in
+                        if let viewModel = viewModel {
+                            WatchlistView(viewModel: viewModel)
+                                .navigationDestination(for: AddNewSymbolViewModel.self) { viewModel in
+                                    if let viewModel = viewModel {
+                                        AddNewSymbolView(viewModel: viewModel)
+                                    }
+                                }
+                                .navigationDestination(for: QuoteViewModel.self) { viewModel in
+                                    if let viewModel = viewModel {
+                                        QuoteView(viewModel: viewModel)
+                                    }
+                                }
                         }
-                    )
+                    }
             }
         }
     }
