@@ -11,28 +11,20 @@ struct CoordinatorView: View {
     @ObservedObject var coordinator: CoordinatorObject
     
     var body: some View {
-        if let viewModel = coordinator.watchlistsViewModel {
+        if let viewModel = coordinator.initialViewModel {
             NavigationStack(path: $coordinator.path) {
                 WatchlistsView(viewModel: viewModel)
-                    .navigationDestination(for: AddNewWatchlistViewModel.self) { viewModel in
-                        if let viewModel = viewModel {
-                            AddNewWatchlistView(viewModel: viewModel)
-                        }
+                    .navigationDestination(for: AddNewWatchlistViewModel.self) {
+                        AddNewWatchlistView(viewModel: $0)
                     }
-                    .navigationDestination(for: WatchlistViewModel.self) { viewModel in
-                        if let viewModel = viewModel {
-                            WatchlistView(viewModel: viewModel)
-                                .navigationDestination(for: AddNewSymbolViewModel.self) { viewModel in
-                                    if let viewModel = viewModel {
-                                        AddNewSymbolView(viewModel: viewModel)
-                                    }
-                                }
-                                .navigationDestination(for: QuoteViewModel.self) { viewModel in
-                                    if let viewModel = viewModel {
-                                        QuoteView(viewModel: viewModel)
-                                    }
-                                }
-                        }
+                    .navigationDestination(for: WatchlistViewModel.self) {
+                        WatchlistView(viewModel: $0)
+                            .navigationDestination(for: AddNewSymbolViewModel.self) {
+                                AddNewSymbolView(viewModel: $0)
+                            }
+                            .navigationDestination(for: QuoteViewModel.self) {
+                                QuoteView(viewModel: $0)
+                            }
                     }
             }
         }

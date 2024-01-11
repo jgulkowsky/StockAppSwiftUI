@@ -12,7 +12,7 @@ import Combine
 
 class CoordinatorObject: Coordinator, ObservableObject {
     @Published var path = NavigationPath()
-    @Published var watchlistsViewModel: WatchlistsViewModel? // todo: can be named also initialViewModel
+    @Published var initialViewModel: WatchlistsViewModel?
     
     private var appFirstStartProvider: AppFirstStartProviding!
     private var watchlistsProvider: WatchlistsProviding!
@@ -21,8 +21,6 @@ class CoordinatorObject: Coordinator, ObservableObject {
     private var chartDataProvider: ChartDataProviding!
     
     private var subscription: AnyCancellable?
-    
-    init() {}
     
     func initializeWith(
         appFirstStartProvider: AppFirstStartProviding,
@@ -39,7 +37,7 @@ class CoordinatorObject: Coordinator, ObservableObject {
     }
     
     func onAppStart() {
-        self.watchlistsViewModel = WatchlistsViewModel(
+        self.initialViewModel = WatchlistsViewModel(
             coordinator: self,
             watchlistsProvider: self.watchlistsProvider
         )
@@ -104,6 +102,8 @@ class CoordinatorObject: Coordinator, ObservableObject {
         }
     }
 }
+
+// todo: move to separate file
 
 extension WatchlistsViewModel: Hashable {
     public static func == (lhs: StockAppLogicSwiftUI.WatchlistsViewModel, rhs: StockAppLogicSwiftUI.WatchlistsViewModel) -> Bool {
