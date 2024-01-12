@@ -12,6 +12,7 @@ import StockAppLogicSwiftUI
 struct AddNewSymbolView: View {
     @ObservedObject var viewModel: AddNewSymbolViewModel
     @State private var searchText: String = ""
+    @FocusState private var isFocused: Bool
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -25,6 +26,10 @@ struct AddNewSymbolView: View {
             .autocorrectionDisabled()
             .onChange(of: searchText) { value in
                 viewModel.onSearchTextChanged(to: value)
+            }
+            .focused($isFocused)
+            .onAppear {
+                isFocused = true
             }
             
             List {

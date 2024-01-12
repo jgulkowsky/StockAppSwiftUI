@@ -30,6 +30,9 @@ struct AddNewWatchlistView: View {
                     viewModel.onTextFieldFocused()
                 }
             }
+            .onAppear {
+                isFocused = true
+            }
             .autocorrectionDisabled()
             .modifier(Shake(animatableData: CGFloat(shakeCount)))
             

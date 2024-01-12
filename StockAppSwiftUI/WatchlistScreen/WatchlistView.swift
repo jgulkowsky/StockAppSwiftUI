@@ -51,6 +51,7 @@ struct WatchlistView: View {
                 Image(systemName: "plus")
             }
             .buttonStyle(.plain)
+            .foregroundColor(.blue)
         }
         .onAppear(perform: viewModel.onViewWillAppear)
         .onDisappear(perform: viewModel.onViewWillDisappear)

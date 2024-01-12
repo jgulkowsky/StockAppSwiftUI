@@ -45,6 +45,7 @@ struct WatchlistsView: View {
                 Image(systemName: "plus")
             }
             .buttonStyle(.plain)
+            .foregroundColor(.blue)
         }
     }
 }
