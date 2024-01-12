@@ -16,18 +16,12 @@ struct AddNewSymbolView: View {
     
     var body: some View {
         List {
-            // todo: make common
             // todo: maybe (it won't be uikit compilant but maybe we should use bigger titles - they look nicer)
-            HStack(alignment: .center) {
-                Image(systemName: "magnifyingglass")
-                    .resizable()
-                    .frame(width: 15, height: 15)
-                    .padding(.horizontal, 2)
-                TextField("Search for symbol to add...", text: $searchText)
-            }
-            .padding(7)
-            .background(Color(.systemGray6))
-            .cornerRadius(8)
+            SolidTextField(
+                searchText: $searchText,
+                placeholder: "Search for symbol to add...",
+                icon: "magnifyingglass"
+            )
             .autocorrectionDisabled()
             .onChange(of: searchText) { value in
                 viewModel.onSearchTextChanged(to: value)
