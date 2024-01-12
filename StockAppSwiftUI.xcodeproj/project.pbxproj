@@ -761,8 +761,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jgulkowsky/StockAppLogic.git";
 			requirement = {
-				branch = "feature/add-core-data";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		E3F50C772B4C38B6005DAF88 /* XCRemoteSwiftPackageReference "Charts" */ = {
