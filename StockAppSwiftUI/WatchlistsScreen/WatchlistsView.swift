@@ -9,6 +9,8 @@ import SwiftUI
 import StockAppLogic
 import StockAppLogicSwiftUI
 
+// todo: make lists here and in WatchlistView coherent - top padding / header
+
 struct WatchlistsView: View {
     @ObservedObject var viewModel: WatchlistsViewModel
     

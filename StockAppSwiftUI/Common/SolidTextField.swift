@@ -21,9 +21,11 @@ struct SolidTextField: View {
                         .frame(width: 15, height: 15)
                         .padding(.horizontal, 2)
                     TextField(placeholder, text: $searchText)
+                        .padding(.trailing, 7)
                 }
             } else {
                 TextField(placeholder, text: $searchText)
+                    .padding(.horizontal, 7)
             }
         }
         .padding(7)

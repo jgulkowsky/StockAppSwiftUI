@@ -15,28 +15,32 @@ struct AddNewSymbolView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        List {
+        VStack {
             SolidTextField(
                 searchText: $searchText,
                 placeholder: "Search for symbol to add...",
                 icon: "magnifyingglass"
             )
+            .padding(.top, 5)
             .autocorrectionDisabled()
             .onChange(of: searchText) { value in
                 viewModel.onSearchTextChanged(to: value)
             }
             
-            ForEach(Array(viewModel.symbols.enumerated()), id: \.offset) { index, symbol in
-                AddNewSymbolCellView(
-                    symbol: symbol,
-                    action: {
-                        viewModel.onItemTapped(at: index)
-                        dismiss()
-                    }
-                )
+            List {
+                ForEach(Array(viewModel.symbols.enumerated()), id: \.offset) { index, symbol in
+                    AddNewSymbolCellView(
+                        symbol: symbol,
+                        action: {
+                            viewModel.onItemTapped(at: index)
+                            dismiss()
+                        }
+                    )
+                }
             }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
+        .padding(.horizontal, Self.horizontalPadding)
         .navigationTitle("Add new symbol")
     }
 }
