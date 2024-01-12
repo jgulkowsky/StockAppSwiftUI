@@ -9,8 +9,6 @@ import SwiftUI
 import StockAppLogic
 import StockAppLogicSwiftUI
 
-// todo: make lists here and in WatchlistView coherent - top padding / header
-
 struct WatchlistsView: View {
     @ObservedObject var viewModel: WatchlistsViewModel
     
@@ -32,7 +30,7 @@ struct WatchlistsView: View {
                     }
                     .onDelete { indexSet in
                         for index in indexSet {
-                            viewModel.onItemSwipedOut(at: Int(index)) // todo: it (or the viewModel logic) behaves strange when removing index 0
+                            viewModel.onItemSwipedOut(at: Int(index))
                         }
                     }
                 }
