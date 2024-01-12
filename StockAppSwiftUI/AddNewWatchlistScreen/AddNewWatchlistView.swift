@@ -16,23 +16,18 @@ struct AddNewWatchlistView: View {
     
     var body: some View {
         VStack {
-            LabeledContent {
-                TextField("e.g. tech stocks", text: $viewModel.watchlistText)
-                    .textFieldStyle(.roundedBorder)
-                    .onSubmit {
-                        viewModel.onTextFieldSubmitted(text: viewModel.watchlistText)
+            SolidTextField(searchText: $viewModel.watchlistText, placeholder: "e.g. tech stocks")
+                .onSubmit {
+                    viewModel.onTextFieldSubmitted(text: viewModel.watchlistText)
+                }
+                .focused($isFocused)
+                .onChange(of: isFocused) { isFocused in
+                    if isFocused {
+                        viewModel.onTextFieldFocused()
                     }
-                    .focused($isFocused)
-                    .onChange(of: isFocused) { isFocused in
-                        if isFocused {
-                            viewModel.onTextFieldFocused()
-                        }
-                    }
-                    .autocorrectionDisabled()
-            } label: {
-                Text("Watchlist name: ")
-            }
-            .modifier(Shake(animatableData: CGFloat(shakeCount)))
+                }
+                .autocorrectionDisabled()
+                .modifier(Shake(animatableData: CGFloat(shakeCount)))
             
             if let error = viewModel.error {
                 ErrorView(text: error)
