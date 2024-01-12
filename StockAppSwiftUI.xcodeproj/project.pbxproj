@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3152C792B4DC7DE008E55C8 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C782B4DC7DE008E55C8 /* Shake.swift */; };
+		E3152C822B4E0A5A008E55C8 /* Chevron.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C812B4E0A5A008E55C8 /* Chevron.swift */; };
+		E3152C842B4E0C2D008E55C8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C832B4E0C2D008E55C8 /* ErrorView.swift */; };
+		E3152C862B4E1385008E55C8 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C852B4E1385008E55C8 /* ViewExtensions.swift */; };
+		E3152C912B50B54C008E55C8 /* ViewModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C902B50B54C008E55C8 /* ViewModelExtensions.swift */; };
+		E3152C972B50B691008E55C8 /* SolidTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3152C962B50B691008E55C8 /* SolidTextField.swift */; };
+		E31CD4432B4C655B00F7AB69 /* WatchlistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */; };
+		E31CD4472B4C999600F7AB69 /* WatchlistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */; };
+		E31CD4492B4C9A6D00F7AB69 /* WatchlistsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */; };
+		E31CD44B2B4CAD9600F7AB69 /* AddNewSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD44A2B4CAD9600F7AB69 /* AddNewSymbolView.swift */; };
+		E31CD44D2B4CADAE00F7AB69 /* AddNewWatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD44C2B4CADAE00F7AB69 /* AddNewWatchlistView.swift */; };
+		E31CD44F2B4D892700F7AB69 /* AddNewSymbolCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CD44E2B4D892700F7AB69 /* AddNewSymbolCellView.swift */; };
+		E384B6162B4C54FE00825A8C /* WatchlistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */; };
+		E384B61A2B4C572E00825A8C /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */; };
 		E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */; };
 		E3F50C3E2B4C05F6005DAF88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */; };
 		E3F50C402B4C05F8005DAF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F50C3F2B4C05F8005DAF88 /* Assets.xcassets */; };
@@ -14,6 +28,13 @@
 		E3F50C4D2B4C05F8005DAF88 /* StockAppSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C4C2B4C05F8005DAF88 /* StockAppSwiftUITests.swift */; };
 		E3F50C572B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C562B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift */; };
 		E3F50C592B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C582B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift */; };
+		E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */; };
+		E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */; };
+		E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */; };
+		E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */; };
+		E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */; };
+		E3F50C792B4C38B6005DAF88 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */; };
+		E3F50C7B2B4C3C5F005DAF88 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +54,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E384B61B2B4C572E00825A8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E384B61A2B4C572E00825A8C /* DGChartsDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E3152C782B4DC7DE008E55C8 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		E3152C812B4E0A5A008E55C8 /* Chevron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
+		E3152C832B4E0C2D008E55C8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		E3152C852B4E1385008E55C8 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		E3152C902B50B54C008E55C8 /* ViewModelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelExtensions.swift; sourceTree = "<group>"; };
+		E3152C962B50B691008E55C8 /* SolidTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidTextField.swift; sourceTree = "<group>"; };
+		E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistHeaderView.swift; sourceTree = "<group>"; };
+		E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsView.swift; sourceTree = "<group>"; };
+		E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistsCellView.swift; sourceTree = "<group>"; };
+		E31CD44A2B4CAD9600F7AB69 /* AddNewSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSymbolView.swift; sourceTree = "<group>"; };
+		E31CD44C2B4CADAE00F7AB69 /* AddNewWatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWatchlistView.swift; sourceTree = "<group>"; };
+		E31CD44E2B4D892700F7AB69 /* AddNewSymbolCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSymbolCellView.swift; sourceTree = "<group>"; };
+		E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCellView.swift; sourceTree = "<group>"; };
 		E3F50C382B4C05F6005DAF88 /* StockAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +92,11 @@
 		E3F50C522B4C05F8005DAF88 /* StockAppSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockAppSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F50C562B4C05F8005DAF88 /* StockAppSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIUITests.swift; sourceTree = "<group>"; };
 		E3F50C582B4C05F8005DAF88 /* StockAppSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAppSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObject.swift; sourceTree = "<group>"; };
+		E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickChart.swift; sourceTree = "<group>"; };
+		E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F50C792B4C38B6005DAF88 /* DGChartsDynamic in Frameworks */,
+				E3F50C692B4C0769005DAF88 /* StockAppLogicSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +126,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3152C7A2B4E0346008E55C8 /* WatchlistsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E31CD4462B4C999600F7AB69 /* WatchlistsView.swift */,
+				E31CD4482B4C9A6D00F7AB69 /* WatchlistsCellView.swift */,
+			);
+			path = WatchlistsScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7B2B4E0358008E55C8 /* WatchlistScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C7A2B4C3C5F005DAF88 /* WatchlistView.swift */,
+				E384B6152B4C54FE00825A8C /* WatchlistCellView.swift */,
+				E31CD4422B4C655B00F7AB69 /* WatchlistHeaderView.swift */,
+			);
+			path = WatchlistScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7C2B4E0364008E55C8 /* QuoteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C6A2B4C08D7005DAF88 /* QuoteView.swift */,
+			);
+			path = QuoteScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7D2B4E036E008E55C8 /* AddNewSymbolScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E31CD44E2B4D892700F7AB69 /* AddNewSymbolCellView.swift */,
+				E31CD44A2B4CAD9600F7AB69 /* AddNewSymbolView.swift */,
+			);
+			path = AddNewSymbolScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7E2B4E0390008E55C8 /* AddNewWatchlistScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E31CD44C2B4CADAE00F7AB69 /* AddNewWatchlistView.swift */,
+			);
+			path = AddNewWatchlistScreen;
+			sourceTree = "<group>";
+		};
+		E3152C7F2B4E03A7008E55C8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C6C2B4C0C78005DAF88 /* CoordinatorView.swift */,
+				E3F50C6E2B4C0CA1005DAF88 /* CoordinatorObject.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E3152C802B4E03B9008E55C8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E3F50C752B4C2B40005DAF88 /* CandleStickChart.swift */,
+				E3152C782B4DC7DE008E55C8 /* Shake.swift */,
+				E3152C812B4E0A5A008E55C8 /* Chevron.swift */,
+				E3152C832B4E0C2D008E55C8 /* ErrorView.swift */,
+				E3152C852B4E1385008E55C8 /* ViewExtensions.swift */,
+				E3152C962B50B691008E55C8 /* SolidTextField.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E3152C8F2B50B53E008E55C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3152C902B50B54C008E55C8 /* ViewModelExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E384B6172B4C561500825A8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E3F50C2F2B4C05F6005DAF88 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +214,7 @@
 				E3F50C4B2B4C05F8005DAF88 /* StockAppSwiftUITests */,
 				E3F50C552B4C05F8005DAF88 /* StockAppSwiftUIUITests */,
 				E3F50C392B4C05F6005DAF88 /* Products */,
+				E384B6172B4C561500825A8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +231,14 @@
 		E3F50C3A2B4C05F6005DAF88 /* StockAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E3152C8F2B50B53E008E55C8 /* Extensions */,
+				E3152C802B4E03B9008E55C8 /* Common */,
+				E3152C7F2B4E03A7008E55C8 /* Coordinator */,
+				E3152C7A2B4E0346008E55C8 /* WatchlistsScreen */,
+				E3152C7E2B4E0390008E55C8 /* AddNewWatchlistScreen */,
+				E3152C7B2B4E0358008E55C8 /* WatchlistScreen */,
+				E3152C7D2B4E036E008E55C8 /* AddNewSymbolScreen */,
+				E3152C7C2B4E0364008E55C8 /* QuoteScreen */,
 				E3F50C3B2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift */,
 				E3F50C3D2B4C05F6005DAF88 /* ContentView.swift */,
 				E3F50C3F2B4C05F8005DAF88 /* Assets.xcassets */,
@@ -137,12 +282,17 @@
 				E3F50C342B4C05F6005DAF88 /* Sources */,
 				E3F50C352B4C05F6005DAF88 /* Frameworks */,
 				E3F50C362B4C05F6005DAF88 /* Resources */,
+				E384B61B2B4C572E00825A8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = StockAppSwiftUI;
+			packageProductDependencies = (
+				E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */,
+				E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */,
+			);
 			productName = StockAppSwiftUI;
 			productReference = E3F50C382B4C05F6005DAF88 /* StockAppSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +365,10 @@
 				Base,
 			);
 			mainGroup = E3F50C2F2B4C05F6005DAF88;
+			packageReferences = (
+				E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */,
+				E3F50C772B4C38B6005DAF88 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = E3F50C392B4C05F6005DAF88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +412,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3F50C3E2B4C05F6005DAF88 /* ContentView.swift in Sources */,
+				E3F50C6B2B4C08D7005DAF88 /* QuoteView.swift in Sources */,
+				E3152C792B4DC7DE008E55C8 /* Shake.swift in Sources */,
+				E3152C842B4E0C2D008E55C8 /* ErrorView.swift in Sources */,
+				E3F50C6F2B4C0CA1005DAF88 /* CoordinatorObject.swift in Sources */,
+				E31CD4432B4C655B00F7AB69 /* WatchlistHeaderView.swift in Sources */,
+				E3F50C762B4C2B40005DAF88 /* CandleStickChart.swift in Sources */,
+				E3F50C7B2B4C3C5F005DAF88 /* WatchlistView.swift in Sources */,
+				E31CD44B2B4CAD9600F7AB69 /* AddNewSymbolView.swift in Sources */,
+				E31CD4472B4C999600F7AB69 /* WatchlistsView.swift in Sources */,
+				E3152C862B4E1385008E55C8 /* ViewExtensions.swift in Sources */,
+				E31CD4492B4C9A6D00F7AB69 /* WatchlistsCellView.swift in Sources */,
 				E3F50C3C2B4C05F6005DAF88 /* StockAppSwiftUIApp.swift in Sources */,
+				E3F50C6D2B4C0C78005DAF88 /* CoordinatorView.swift in Sources */,
+				E384B6162B4C54FE00825A8C /* WatchlistCellView.swift in Sources */,
+				E3152C822B4E0A5A008E55C8 /* Chevron.swift in Sources */,
+				E3152C912B50B54C008E55C8 /* ViewModelExtensions.swift in Sources */,
+				E31CD44D2B4CADAE00F7AB69 /* AddNewWatchlistView.swift in Sources */,
+				E3152C972B50B691008E55C8 /* SolidTextField.swift in Sources */,
+				E31CD44F2B4D892700F7AB69 /* AddNewSymbolCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +755,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jgulkowsky/StockAppLogic.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		E3F50C772B4C38B6005DAF88 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3F50C682B4C0769005DAF88 /* StockAppLogicSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3F50C652B4C0769005DAF88 /* XCRemoteSwiftPackageReference "StockAppLogic" */;
+			productName = StockAppLogicSwiftUI;
+		};
+		E3F50C782B4C38B6005DAF88 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3F50C772B4C38B6005DAF88 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3F50C302B4C05F6005DAF88 /* Project object */;
 }
