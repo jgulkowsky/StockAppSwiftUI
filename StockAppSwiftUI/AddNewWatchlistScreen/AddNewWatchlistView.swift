@@ -42,7 +42,6 @@ struct AddNewWatchlistView: View {
         }
         .padding(.horizontal, Self.horizontalPadding)
         .navigationTitle("Add new watchlist")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

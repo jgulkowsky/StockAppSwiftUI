@@ -16,7 +16,6 @@ struct AddNewSymbolView: View {
     
     var body: some View {
         List {
-            // todo: maybe (it won't be uikit compilant but maybe we should use bigger titles - they look nicer)
             SolidTextField(
                 searchText: $searchText,
                 placeholder: "Search for symbol to add...",
@@ -39,7 +38,6 @@ struct AddNewSymbolView: View {
         }
         .listStyle(.plain)
         .navigationTitle("Add new symbol")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

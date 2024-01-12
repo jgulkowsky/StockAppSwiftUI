@@ -44,7 +44,6 @@ struct WatchlistView: View {
             }
         }
         .navigationTitle(viewModel.title)
-        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button {
                 viewModel.onAddButtonTapped()

@@ -69,7 +69,6 @@ struct QuoteView: View {
             }
         }
         .navigationTitle(viewModel.title)
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: viewModel.onViewWillAppear)
         .onDisappear(perform: viewModel.onViewWillDisappear)
     }
