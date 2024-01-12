@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jgulkowsky/StockAppLogic.git",
       "state" : {
-        "branch" : "feature/add-swift-ui-version",
-        "revision" : "c7788c04897c1ebfba86cb34319eda48575b89c1"
+        "revision" : "815746f8f71008dc178893817427cd037d821bda",
+        "version" : "2.0.0"
       }
     }
   ],

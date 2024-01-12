@@ -13,7 +13,6 @@ struct QuoteView: View {
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
-    // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
     private static let labelsPaddingTop: Double = 20
     private static let offsetBetweenLabels: Double = 5
     private static let labelsPaddingBottom: Double = 15
@@ -70,7 +69,6 @@ struct QuoteView: View {
             }
         }
         .navigationTitle(viewModel.title)
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: viewModel.onViewWillAppear)
         .onDisappear(perform: viewModel.onViewWillDisappear)
     }

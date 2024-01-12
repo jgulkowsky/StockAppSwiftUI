@@ -11,42 +11,21 @@ struct CoordinatorView: View {
     @ObservedObject var coordinator: CoordinatorObject
     
     var body: some View {
-        NavigationStack {
-            if coordinator.goToWatchlistsScreen,
-               let viewModel = coordinator.watchlistsViewModel {
+        if let viewModel = coordinator.initialViewModel {
+            NavigationStack(path: $coordinator.path) {
                 WatchlistsView(viewModel: viewModel)
-                    .navigationDestination(
-                        isPresented: $coordinator.goToAddNewWatchlistScreen,
-                        destination: {
-                            if let viewModel = coordinator.addNewWatchlistViewModel {
-                                AddNewWatchlistView(viewModel: viewModel)
+                    .navigationDestination(for: AddNewWatchlistViewModel.self) {
+                        AddNewWatchlistView(viewModel: $0)
+                    }
+                    .navigationDestination(for: WatchlistViewModel.self) {
+                        WatchlistView(viewModel: $0)
+                            .navigationDestination(for: AddNewSymbolViewModel.self) {
+                                AddNewSymbolView(viewModel: $0)
                             }
-                        }
-                    )
-                    .navigationDestination(
-                        isPresented: $coordinator.goToWatchlistScreen,
-                        destination: {
-                            if let viewModel = coordinator.watchlistViewModel {
-                                WatchlistView(viewModel: viewModel)
-                                    .navigationDestination(
-                                        isPresented: $coordinator.goToAddNewSymbolScreen,
-                                        destination: {
-                                            if let viewModel = coordinator.addNewSymbolViewModel {
-                                                AddNewSymbolView(viewModel: viewModel)
-                                            }
-                                        }
-                                    )
-                                    .navigationDestination(
-                                        isPresented: $coordinator.goToQuoteScreen,
-                                        destination: {
-                                            if let viewModel = coordinator.quoteViewModel {
-                                                QuoteView(viewModel: viewModel)
-                                            }
-                                        }
-                                    )
+                            .navigationDestination(for: QuoteViewModel.self) {
+                                QuoteView(viewModel: $0)
                             }
-                        }
-                    )
+                    }
             }
         }
     }

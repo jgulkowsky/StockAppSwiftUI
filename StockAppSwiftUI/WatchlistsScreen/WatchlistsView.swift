@@ -30,7 +30,7 @@ struct WatchlistsView: View {
                     }
                     .onDelete { indexSet in
                         for index in indexSet {
-                            viewModel.onItemSwipedOut(at: Int(index)) // todo: it (or the viewModel logic) behaves strange when removing index 0
+                            viewModel.onItemSwipedOut(at: Int(index))
                         }
                     }
                 }
@@ -38,7 +38,6 @@ struct WatchlistsView: View {
             }
         }
         .navigationTitle("Watchlists")
-        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button {
                 viewModel.onAddButtonTapped()
@@ -46,6 +45,7 @@ struct WatchlistsView: View {
                 Image(systemName: "plus")
             }
             .buttonStyle(.plain)
+            .foregroundColor(.blue)
         }
     }
 }

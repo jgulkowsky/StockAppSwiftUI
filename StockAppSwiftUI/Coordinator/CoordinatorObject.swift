@@ -11,95 +11,8 @@ import StockAppLogicSwiftUI
 import Combine
 
 class CoordinatorObject: Coordinator, ObservableObject {
-    @Published var goToWatchlistsScreen: Bool = false {
-        didSet {
-            if goToWatchlistsScreen == false {
-                watchlistsViewModel = nil
-            }
-        }
-    }
-    
-    @Published var goToAddNewWatchlistScreen: Bool = false {
-        didSet {
-            if goToAddNewWatchlistScreen == false {
-                addNewWatchlistViewModel = nil
-            }
-        }
-    }
-    
-    @Published var goToWatchlistScreen: Bool = false {
-        didSet {
-            if goToWatchlistScreen == false {
-                watchlistViewModel = nil
-            }
-        }
-    }
-    
-    @Published var goToAddNewSymbolScreen: Bool = false {
-        didSet {
-            if goToAddNewSymbolScreen == false {
-                addNewSymbolViewModel = nil
-            }
-        }
-    }
-    
-    @Published var goToQuoteScreen: Bool = false {
-        didSet {
-            if goToQuoteScreen == false {
-                quoteViewModel = nil
-            }
-        }
-    }
-    
-    @Published var watchlistsViewModel: WatchlistsViewModel? {
-        didSet {
-            if watchlistsViewModel != nil {
-                currentViewModel = watchlistsViewModel
-            } else {
-                currentViewModel = nil
-            }
-        }
-    }
-    
-    @Published var addNewWatchlistViewModel: AddNewWatchlistViewModel? {
-        didSet {
-            if addNewWatchlistViewModel != nil {
-                currentViewModel = addNewWatchlistViewModel
-            } else {
-                currentViewModel = watchlistsViewModel
-            }
-        }
-    }
-    
-    @Published var watchlistViewModel: WatchlistViewModel? {
-        didSet {
-            if watchlistViewModel != nil {
-                currentViewModel = watchlistViewModel
-            } else {
-                currentViewModel = watchlistsViewModel
-            }
-        }
-    }
-    
-    @Published var addNewSymbolViewModel: AddNewSymbolViewModel? {
-        didSet {
-            if addNewSymbolViewModel != nil {
-                currentViewModel = addNewSymbolViewModel
-            } else {
-                currentViewModel = watchlistViewModel
-            }
-        }
-    }
-    
-    @Published var quoteViewModel: QuoteViewModel?{
-        didSet {
-            if quoteViewModel != nil {
-                currentViewModel = quoteViewModel
-            } else {
-                currentViewModel = watchlistViewModel
-            }
-        }
-    }
+    @Published var path = NavigationPath()
+    @Published var initialViewModel: WatchlistsViewModel?
     
     private var appFirstStartProvider: AppFirstStartProviding!
     private var watchlistsProvider: WatchlistsProviding!
@@ -107,10 +20,7 @@ class CoordinatorObject: Coordinator, ObservableObject {
     private var symbolsProvider: SymbolsProviding!
     private var chartDataProvider: ChartDataProviding!
     
-    private var currentViewModel: Any?
     private var subscription: AnyCancellable?
-    
-    init() {}
     
     func initializeWith(
         appFirstStartProvider: AppFirstStartProviding,
@@ -127,15 +37,13 @@ class CoordinatorObject: Coordinator, ObservableObject {
     }
     
     func onAppStart() {
-        self.watchlistsViewModel = WatchlistsViewModel(
+        self.initialViewModel = WatchlistsViewModel(
             coordinator: self,
             watchlistsProvider: self.watchlistsProvider
         )
-        self.goToWatchlistsScreen = true
         
         if appFirstStartProvider.isFirstAppStart {
             subscription = watchlistsProvider.watchlists
-                .debounce(for: 0.2, scheduler: DispatchQueue.main) // todo: for some reason it doesn't want to work with smaller delay or without...
                 .receive(on: RunLoop.main)
                 .sink { [weak self] watchlists in
                     guard let `self` = self else { return }
@@ -147,62 +55,50 @@ class CoordinatorObject: Coordinator, ObservableObject {
     }
     
     func execute(action: Action) {
-        if currentViewModel is WatchlistsViewModel {
-            switch action {
-            case .itemSelected(let data):
-                if let watchlist = data as? Watchlist {
-                    self.watchlistViewModel = WatchlistViewModel(
+        switch action {
+        case .itemSelected(let data):
+            if let watchlist = data as? Watchlist {
+                self.path.append(
+                    WatchlistViewModel(
                         coordinator: self,
                         watchlistsProvider: self.watchlistsProvider,
                         quotesProvider: self.quotesProvider,
                         watchlist: watchlist,
                         refreshRate: 5
                     )
-                    self.goToWatchlistScreen = true
-                }
-            case .addButtonTapped:
-                self.addNewWatchlistViewModel = AddNewWatchlistViewModel(
-                    coordinator: self,
-                    watchlistsProvider: self.watchlistsProvider
                 )
-                self.goToAddNewWatchlistScreen = true
-            default:
-                return
-            }
-        } else if currentViewModel is WatchlistViewModel {
-            switch action {
-            case .itemSelected(let data):
-                if let stockItem = data as? StockItem {
-                    self.quoteViewModel = QuoteViewModel(
+            } else if let stockItem = data as? StockItem {
+                self.path.append(
+                    QuoteViewModel(
                         coordinator: self,
                         quotesProvider: self.quotesProvider,
                         chartDataProvider: self.chartDataProvider,
                         symbol: stockItem.symbol,
                         refreshRate: 5
                     )
-                    self.goToQuoteScreen = true
-                }
-            case .addButtonTapped(let data):
-                if let watchlist = data as? Watchlist {
-                    self.addNewSymbolViewModel = AddNewSymbolViewModel(
+                )
+            }
+        case .addButtonTapped(let data):
+            if let watchlist = data as? Watchlist {
+                self.path.append(
+                    AddNewSymbolViewModel(
                         coordinator: self,
                         watchlistsProvider: self.watchlistsProvider,
                         symbolsProvider: self.symbolsProvider,
                         watchlist: watchlist,
                         searchTextDebounceMillis: 500
                     )
-                    self.goToAddNewSymbolScreen = true
-                }
-            default:
-                return
+                )
+            } else {
+                self.path.append(
+                    AddNewWatchlistViewModel(
+                        coordinator: self,
+                        watchlistsProvider: self.watchlistsProvider
+                    )
+                )
             }
-        } else if currentViewModel is AddNewWatchlistViewModel {
-            switch action {
-            case .inputSubmitted:
-                self.goToAddNewWatchlistScreen = false
-            default:
-                return
-            }
+        case .inputSubmitted:
+            path.removeLast()
         }
     }
 }

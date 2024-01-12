@@ -13,9 +13,8 @@ struct ErrorView: View {
     var buttonText: String?
     var onTap: (() -> Void)?
     
-    // todo: this could be shared accross UIKit and SwiftUI project - as well as styles of Views (another package?)
     private static let errorTextPaddingTop: CGFloat = 15.0
-    private static let errorButtonPaddingTop: CGFloat = 15.0 // todo: this is differrent than UIKit as in my option 30.0 is too much here
+    private static let errorButtonPaddingTop: CGFloat = 15.0
     private static let errorButtonWidth: CGFloat = 150.0
     private static let errorButtonHeight: CGFloat = 40.0
     

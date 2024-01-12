@@ -9,8 +9,6 @@ import SwiftUI
 import DGCharts
 import StockAppLogic
 
-// todo: as generally 95% of this struct is a copy from UIKit app - it would be nice to have some StockAppUI package with shared UIViews and here we would just use the CandleStickChartView from the package to create it's SwiftUI version
-
 typealias ChartData = StockAppLogic.ChartData
 
 struct CandleStickChart: UIViewRepresentable {
